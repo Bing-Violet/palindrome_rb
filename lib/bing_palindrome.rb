@@ -1,7 +1,6 @@
 require "bing_palindrome/version"
 
-class String
-
+module BingPalindrome
   # Returns true for a palindrome, false otherwise.
   def palindrome?
     processed_content == processed_content.reverse
@@ -11,7 +10,14 @@ class String
 
     # Returns content for palindrome testing.
     def processed_content
-      self.scan(/[a-z]/i).join.downcase
+      self.to_s.scan(/[a-z\d]/i).join.downcase
     end
+end
 
+class String
+	include BingPalindrome
+end
+
+class Integer
+	include BingPalindrome
 end

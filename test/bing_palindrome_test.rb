@@ -17,4 +17,12 @@ class BingPalindromeTest < Minitest::Test
     assert "Madam, I'm Adam.".palindrome?
   end
 
+  def test_integer_palindrome
+  	assert 123454321.palindrome?
+  end
+
+  def test_integer_nonpalindrome
+  	refute 277821.palindrome?
+  end
+
 end
